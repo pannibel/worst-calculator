@@ -1,5 +1,4 @@
 // SETTING UP
-
 let firstnumber;
 let secondnumber;
 let operator;
@@ -10,10 +9,8 @@ let result;
 document.querySelector("#calculate").addEventListener("click", readNumbers);
 document.querySelector("#calculate").addEventListener("click", opFunc);
 document.querySelector("#calculate").addEventListener("click", opCalc);
-document.querySelector("#doround").addEventListener("click", roundOrNot);
 
 // READ A NUMBER FROM AN IMPUT FIELD
-
 function readNumbers() {
 
     firstnumber = Number(document.querySelector("#firstnumber").value);
@@ -25,16 +22,13 @@ function readNumbers() {
 }
 
 // READ AN OPERATOR FROM DROP-DOWN
-
 function opFunc() {
 
     operator = document.querySelector("#operator").value;
     console.log(operator);
 }
 
-
 // SELECTING DIFFERENT CALCULATIONS DEPENDING ON A VARIABLE (IF STATEMENTS)
-
 function opCalc() {
 
     if (operator === "add") {
@@ -51,12 +45,12 @@ function opCalc() {
     };
 
     console.log(result);
+
+    roundOrNot();
     writeResult();
 }
 
-
 // CHECKING IF A CHECKBOX IS SELECTED
-
 function roundOrNot() {
 
     checked = document.querySelector("#doround").checked;
@@ -65,7 +59,6 @@ function roundOrNot() {
     if (checked) {
         rounding = Number(document.querySelector("#decimals").value);
         console.log("yes rounding");
-        console.log(rounding);
         doRound();
         }
     if (!checked) {
@@ -73,7 +66,6 @@ function roundOrNot() {
 }}
 
 // ROUNDING TO A NUMBER OF DECIMALS
-
 function doRound() {
     console.log("round to", rounding);
     if (rounding === 0) {
@@ -124,17 +116,18 @@ function doRound() {
 }
 
 // WRITING A RESULT INTO AN IMPUT FIELD AND APPENDING TO AN HTML LIST
-
 function writeResult() {
     document.querySelector("#firstnumber").value = result;
-    document.querySelector("ul").append(result);
+
+    let ul = document.getElementById("results");
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(result));
+    ul.appendChild(li);
 
     listScroll();
 }
 
-
 // SCROLLING A LIST TO THE BOTTOM
-
 function listScroll() {
     document.querySelector("#results").scrollTo(0, 100000);
 }
