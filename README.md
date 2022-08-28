@@ -1,0 +1,1 @@
+https://pannibel.github.io/worst-calculator/
