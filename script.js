@@ -8,6 +8,7 @@ let result;
 
 document.querySelector("#calculate").addEventListener("click", readNumbers);
 document.querySelector("#calculate").addEventListener("click", opFunc);
+document.querySelector("#calculate").addEventListener("click", opCalc);
 
 // READ A NUMBER FROM AN IMPUT FIELD
 
@@ -34,19 +35,20 @@ function opFunc() {
 
 function opCalc() {
 
-    if (operator === add) {
-
+    if (operator === "add") {
+        result = firstnumber + secondnumber;
     };
-    if (operator === sub) {
-
+    if (operator === "sub") {
+        result = firstnumber - secondnumber;
     };
-    if (operator === mul) {
-
+    if (operator === "mul") {
+        result = firstnumber * secondnumber;
     };
-    if (operator === div) {
-
+    if (operator === "div") {
+        result = firstnumber / secondnumber;
     };
 
+    console.log(result)
 }
 
 
