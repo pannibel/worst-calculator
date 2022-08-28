@@ -1,13 +1,53 @@
 // SETTING UP
 
+let firstnumber;
+let secondnumber;
+let operator;
+let rounding;
+let result;
 
-// READ A NUMBER FROM IMPUT FIELD
+document.querySelector("#calculate").addEventListener("click", readNumbers);
+document.querySelector("#calculate").addEventListener("click", opFunc);
 
+// READ A NUMBER FROM AN IMPUT FIELD
+
+function readNumbers() {
+
+    firstnumber = Number(document.querySelector("#firstnumber").value);
+    console.log(firstnumber);
+
+    secondnumber = Number(document.querySelector("#secondnumber").value);
+    console.log(secondnumber);
+
+}
 
 // READ AN OPERATOR FROM DROP-DOWN
 
+function opFunc() {
+
+    operator = document.querySelector("#operator").value;
+    console.log(operator);
+}
+
 
 // SELECTING DIFFERENT CALCULATIONS DEPENDING ON A VARIABLE (IF STATEMENTS)
+
+function opCalc() {
+
+    if (operator === add) {
+
+    };
+    if (operator === sub) {
+
+    };
+    if (operator === mul) {
+
+    };
+    if (operator === div) {
+
+    };
+
+}
 
 
 // DOING CALCULATIONS
