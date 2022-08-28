@@ -129,7 +129,7 @@ function writeResult() {
 
 // SCROLLING A LIST TO THE BOTTOM
 function listScroll() {
-    document.querySelector("#results").scrollTo(0, 100000);
+    document.querySelector("#results").scrollTo(0, 100000000);
 }
 
 // CLEARING A LIST
