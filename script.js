@@ -5,10 +5,13 @@ let operator;
 let checked;
 let rounding;
 let result;
+let ul;
+let li;
 
 document.querySelector("#calculate").addEventListener("click", readNumbers);
 document.querySelector("#calculate").addEventListener("click", opFunc);
 document.querySelector("#calculate").addEventListener("click", opCalc);
+document.querySelector("#clear").addEventListener("click", clearResults);
 
 // READ A NUMBER FROM AN IMPUT FIELD
 function readNumbers() {
@@ -119,8 +122,8 @@ function doRound() {
 function writeResult() {
     document.querySelector("#firstnumber").value = result;
 
-    let ul = document.getElementById("results");
-    let li = document.createElement("li");
+    ul = document.getElementById("results");
+    li = document.createElement("li");
     li.appendChild(document.createTextNode(result));
     ul.appendChild(li);
 
@@ -133,3 +136,15 @@ function listScroll() {
 }
 
 // CLEARING A LIST
+function clearResults() {
+    firstnumber = "";
+    secondnumber = "";
+    operator = "";
+    checked = "";
+    rounding = "";
+    result = "";
+
+    document.querySelector("#firstnumber").value = "";
+    document.querySelector("#secondnumber").value = "";
+    document.querySelectorAll("li").forEach((el) => el.textContent = "0");
+}
